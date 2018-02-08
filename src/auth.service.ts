@@ -66,4 +66,16 @@ export class AuthService {
     });
   }
 
+  signOut(providerId: string): Promise<any> {
+    return new Promise((resolve, reject) => {
+      let providerObject = this.providers.get(providerId);
+      providerObject.signOut().then(() => {
+        this._authState.next(null);
+        resolve();
+      }).catch((err) => {
+        this._authState.next(null);
+      });
+    });
+  }
+
 }
