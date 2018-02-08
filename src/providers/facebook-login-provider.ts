@@ -33,6 +33,8 @@ export class FacebookLoginProvider extends BaseLoginProvider {
               FB.api('/me?fields=name,email,picture', (res: any) => {
                 resolve(FacebookLoginProvider.drawUser(Object.assign({}, {token: accessToken}, res)));
               });
+            } else {
+              resolve(null);
             }
           });
         });

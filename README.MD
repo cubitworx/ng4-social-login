@@ -1,9 +1,15 @@
 # ng4 Social Login
 
-This is the refrenced library from [angular4-social-login](https://abacritt.github.io/angular4-social-login/).
-
 Social login and authentication module for Angular 4. 
 Supports authentication with **Google**, **Linkedin** and **Facebook**.
+
+Forked from [ng4-social-login](https://github.com/sarfarazansari/ng4-social-login) with provider initialisation only happening
+when you the user sign's in. The benefit of this is that no provider scripts are not loaded into the DOM until they are needed.
+
+This means that a separate service is needed for managing the user session; but can now manage the user login via other mechanisms
+such as local storage, server, etc. It is no longer bound to querying the provider on each page refresh.
+
+The original documentation can be used since the package is consumed in the same manner as the original package.
 
 
 
@@ -17,7 +23,7 @@ check out [Docs](https://sarfarazansari.github.io/ng4-social-login/)
 ### Install via npm 
 
 ```sh
-npm install --save ng4-social-login
+npm install --save @cubitworx/ng4-social-login
 ```
 
 ### Import the module

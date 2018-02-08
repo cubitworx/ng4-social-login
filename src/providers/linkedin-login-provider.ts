@@ -31,6 +31,8 @@ export class LinkedinLoginProvider extends BaseLoginProvider {
               ).result( (res: LinkedInResponse) => {
                 resolve(this.drawUser(res));
               });
+            } else {
+              resolve(null);
             }
           });
 

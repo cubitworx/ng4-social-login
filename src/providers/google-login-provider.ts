@@ -28,6 +28,8 @@ export class GoogleLoginProvider extends BaseLoginProvider {
             this.auth2.then(() => {
               if (this.auth2.isSignedIn.get()) {
                 resolve(this.drawUser());
+              } else {
+                resolve(null);
               }
             });
           });
